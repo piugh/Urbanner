@@ -22,7 +22,7 @@ public class RedisLock implements ILock {
 
     @Override
     public boolean tryLock(long expireTime) {
-        long threadId = Thread.currentThread().getId();
+        String threadId = ID_PREFIX + Thread.currentThread().getId();
         Boolean success = stringRedisTemplate.opsForValue().setIfAbsent(KET_PREFIX + name, ""+threadId, expireTime,
                 TimeUnit.SECONDS);
         return Boolean.TRUE.equals(success);
@@ -30,7 +30,10 @@ public class RedisLock implements ILock {
 
     @Override
     public void unlock() {
-
-        stringRedisTemplate.delete(KET_PREFIX + name);
+        String threadId = ID_PREFIX + Thread.currentThread().getId();
+        String lockId = stringRedisTemplate.opsForValue().get(KET_PREFIX + name);
+        if(threadId.equals(lockId)){
+            stringRedisTemplate.delete(KET_PREFIX + name);
+        }
     }
 }

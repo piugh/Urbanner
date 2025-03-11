@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4742c22f-d928-43eb-80ee-2ab4c75b4970" name="Changes" comment="" />
+    <list default="true" id="4742c22f-d928-43eb-80ee-2ab4c75b4970" name="Changes" comment="新增基于redis实现手机验证码登陆；&#10;新增基于redis实现初始界面缓存；&#10;解决redis缓存数据一致性问题：超时剔除+主动更新（先操作数据库再删除缓存--线程更安全）&#10;解决redis穿透（设置null）&#10;解决redis雪崩（批量加入是ttl加随机数）&#10;redis击穿（热点信息设置逻辑过期时间+互斥锁）">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5d872f30-0b3c-4382-b6bc-74009bad26af.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5d872f30-0b3c-4382-b6bc-74009bad26af.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hmdp/utils/RedisLock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hmdp/utils/RedisLock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hmdp/utils/RedisLock.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hmdp/utils/RedisLock.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,6 +58,7 @@
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.HmDianPingApplication (1).executor": "Run",
     "Spring Boot.HmDianPingApplication.executor": "Run",
     "deletionFromPopupRequiresConfirmation": "false",
     "git-widget-placeholder": "master",
@@ -74,6 +81,9 @@
     ]
   }
 }]]></component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -91,6 +101,20 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HmDianPingApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <additionalParameters>
+        <param>
+          <option name="enabled" value="true" />
+          <option name="name" value="server.port" />
+          <option name="value" value="8082" />
+        </param>
+      </additionalParameters>
+      <module name="hm-dianping" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.hmdp.HmDianPingApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -126,11 +150,40 @@
       <updated>1741413703891</updated>
       <workItem from="1741413705997" duration="26887000" />
       <workItem from="1741500534343" duration="30140000" />
-      <workItem from="1741668052668" duration="1440000" />
+      <workItem from="1741668052668" duration="8567000" />
     </task>
+    <task id="LOCAL-00001" summary="新增基于redis实现手机验证码登陆；&#10;新增基于redis实现初始界面缓存；&#10;解决redis缓存数据一致性问题：超时剔除+主动更新（先操作数据库再删除缓存--线程更安全）&#10;解决redis穿透（设置null）&#10;解决redis雪崩（批量加入是ttl加随机数）&#10;redis击穿（热点信息设置逻辑过期时间+互斥锁）">
+      <option name="closed" value="true" />
+      <created>1741669969136</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1741669969136</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="新增基于redis实现手机验证码登陆；&#10;新增基于redis实现初始界面缓存；&#10;解决redis缓存数据一致性问题：超时剔除+主动更新（先操作数据库再删除缓存--线程更安全）&#10;解决redis穿透（设置null）&#10;解决redis雪崩（批量加入是ttl加随机数）&#10;redis击穿（热点信息设置逻辑过期时间+互斥锁）" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增基于redis实现手机验证码登陆；&#10;新增基于redis实现初始界面缓存；&#10;解决redis缓存数据一致性问题：超时剔除+主动更新（先操作数据库再删除缓存--线程更安全）&#10;解决redis穿透（设置null）&#10;解决redis雪崩（批量加入是ttl加随机数）&#10;redis击穿（热点信息设置逻辑过期时间+互斥锁）" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/hmdp/service/impl/VoucherOrderServiceImpl.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/hmdp/service/impl/VoucherOrderServiceImpl.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

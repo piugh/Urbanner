@@ -1017,7 +1017,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="294" parent="1" name="hmdp">
-      <LastIntrospectionLocalTimestamp>2025-03-09.06:34:38</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2025-03-11.06:07:10</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <user id="295" parent="1" name="mysql.infoschema">
@@ -1107,7 +1107,7 @@ COMPACT</Options>
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
     <column id="310" parent="299" name="id">
-      <AutoIncrement>22</AutoIncrement>
+      <AutoIncrement>23</AutoIncrement>
       <Comment>主键</Comment>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1341,7 +1341,7 @@ COMPACT</Options>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="348" parent="303" name="id">
-      <AutoIncrement>14</AutoIncrement>
+      <AutoIncrement>15</AutoIncrement>
       <Comment>主键</Comment>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1444,7 +1444,7 @@ COMPACT</Options>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="366" parent="304" name="id">
-      <AutoIncrement>10</AutoIncrement>
+      <AutoIncrement>11</AutoIncrement>
       <Comment>主键</Comment>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1535,7 +1535,7 @@ COMPACT</Options>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="382" parent="306" name="id">
-      <AutoIncrement>1011</AutoIncrement>
+      <AutoIncrement>1012</AutoIncrement>
       <Comment>主键</Comment>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1676,7 +1676,7 @@ COMPACT</Options>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="406" parent="308" name="id">
-      <AutoIncrement>9</AutoIncrement>
+      <AutoIncrement>11</AutoIncrement>
       <Comment>主键</Comment>
       <NotNull>1</NotNull>
       <Position>1</Position>
