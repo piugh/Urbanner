@@ -65,15 +65,4 @@ public class ShopServiceImpl extends ServiceImpl<ShopMapper, Shop> implements IS
         return Result.ok();
     }
 
-    //尝试获取锁
-    private boolean tryLock(String key) {
-        Boolean flag = stringRedisTemplate.opsForValue().setIfAbsent(key, "1", 10, TimeUnit.SECONDS);
-        return BooleanUtil.isTrue(flag);
-    }
-
-    //释放锁
-    private void clseLock(String key) {
-        stringRedisTemplate.delete(key);
-    }
-
 }

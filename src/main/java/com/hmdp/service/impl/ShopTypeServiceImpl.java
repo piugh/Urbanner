@@ -14,14 +14,6 @@ import javax.annotation.Resource;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-/**
- * <p>
- *  服务实现类
- * </p>
- *
- * @author 虎哥
- * @since 2021-12-22
- */
 @Service
 public class ShopTypeServiceImpl extends ServiceImpl<ShopTypeMapper, ShopType> implements IShopTypeService {
 
@@ -38,8 +30,8 @@ public class ShopTypeServiceImpl extends ServiceImpl<ShopTypeMapper, ShopType> i
         String typeJson = stringRedisTemplate.opsForValue().get(RedisConstants.CACHE_SHOP_TYPE_KEY);
         //2. 存在：返回
         if (typeJson != null && !typeJson.isEmpty()) {
-            List<ShopType> shopTypeList = JSONUtil.toList(typeJson, ShopType.class);
-            return Result.ok(shopTypeList);
+            List<ShopType> typeList = JSONUtil.toList(typeJson, ShopType.class);
+            return Result.ok(typeList);
         }
         //3. 不存在：从数据库查询商铺类型
         List<ShopType> typeList = query().orderByAsc("sort").list();
